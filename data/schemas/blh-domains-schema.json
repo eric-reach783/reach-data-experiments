@@ -1,0 +1,196 @@
+{
+ "$schema": "http://json-schema.org/schema#",
+ "type": "object",
+ "properties": {
+  "data": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "ObjectIdentifier": {
+      "type": "string"
+     },
+     "Properties": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "domain": {
+        "type": "string"
+       },
+       "domainsid": {
+        "type": "string"
+       },
+       "distinguishedname": {
+        "type": "string"
+       },
+       "description": {
+        "type": "string"
+       },
+       "functionallevel": {
+        "type": "string"
+       },
+       "highvalue": {
+        "type": "boolean"
+       },
+       "isaclprotected": {
+        "type": "boolean"
+       },
+       "collected": {
+        "type": "boolean"
+       },
+       "whencreated": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "collected",
+       "description",
+       "distinguishedname",
+       "domain",
+       "domainsid",
+       "functionallevel",
+       "highvalue",
+       "isaclprotected",
+       "name",
+       "whencreated"
+      ]
+     },
+     "Trusts": {
+      "type": "array"
+     },
+     "Aces": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "RightName": {
+         "type": "string"
+        },
+        "IsInherited": {
+         "type": "boolean"
+        },
+        "PrincipalSID": {
+         "type": "string"
+        },
+        "PrincipalType": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "IsInherited",
+        "PrincipalSID",
+        "PrincipalType",
+        "RightName"
+       ]
+      }
+     },
+     "Links": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "IsEnforced": {
+         "type": "boolean"
+        },
+        "GUID": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "GUID",
+        "IsEnforced"
+       ]
+      }
+     },
+     "ChildObjects": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "ObjectIdentifier": {
+         "type": "string"
+        },
+        "ObjectType": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "ObjectIdentifier",
+        "ObjectType"
+       ]
+      }
+     },
+     "GPOChanges": {
+      "type": "object",
+      "properties": {
+       "AffectedComputers": {
+        "type": "array"
+       },
+       "DcomUsers": {
+        "type": "array"
+       },
+       "LocalAdmins": {
+        "type": "array"
+       },
+       "PSRemoteUsers": {
+        "type": "array"
+       },
+       "RemoteDesktopUsers": {
+        "type": "array"
+       }
+      },
+      "required": [
+       "AffectedComputers",
+       "DcomUsers",
+       "LocalAdmins",
+       "PSRemoteUsers",
+       "RemoteDesktopUsers"
+      ]
+     },
+     "IsDeleted": {
+      "type": "boolean"
+     },
+     "IsACLProtected": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "Aces",
+     "ChildObjects",
+     "GPOChanges",
+     "IsACLProtected",
+     "IsDeleted",
+     "Links",
+     "ObjectIdentifier",
+     "Properties",
+     "Trusts"
+    ]
+   }
+  },
+  "meta": {
+   "type": "object",
+   "properties": {
+    "type": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer"
+    },
+    "version": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "count",
+    "type",
+    "version"
+   ]
+  }
+ },
+ "required": [
+  "data",
+  "meta"
+ ]
+}

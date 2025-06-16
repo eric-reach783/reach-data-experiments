@@ -1,0 +1,126 @@
+{
+ "$schema": "http://json-schema.org/schema#",
+ "type": "object",
+ "properties": {
+  "data": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "ObjectIdentifier": {
+      "type": "string"
+     },
+     "Properties": {
+      "type": "object",
+      "properties": {
+       "domain": {
+        "type": "string"
+       },
+       "name": {
+        "type": "string"
+       },
+       "distinguishedname": {
+        "type": "string"
+       },
+       "domainsid": {
+        "type": "string"
+       },
+       "highvalue": {
+        "type": "boolean"
+       },
+       "gpcpath": {
+        "type": "string"
+       },
+       "description": {
+        "type": "string"
+       },
+       "whencreated": {
+        "type": "integer"
+       },
+       "isaclprotected": {
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "description",
+       "distinguishedname",
+       "domain",
+       "domainsid",
+       "gpcpath",
+       "highvalue",
+       "isaclprotected",
+       "name",
+       "whencreated"
+      ]
+     },
+     "IsDeleted": {
+      "type": "boolean"
+     },
+     "IsACLProtected": {
+      "type": "boolean"
+     },
+     "Aces": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "RightName": {
+         "type": "string"
+        },
+        "IsInherited": {
+         "type": "boolean"
+        },
+        "PrincipalSID": {
+         "type": "string"
+        },
+        "PrincipalType": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "IsInherited",
+        "PrincipalSID",
+        "PrincipalType",
+        "RightName"
+       ]
+      }
+     }
+    },
+    "required": [
+     "Aces",
+     "IsACLProtected",
+     "IsDeleted",
+     "ObjectIdentifier",
+     "Properties"
+    ]
+   }
+  },
+  "meta": {
+   "type": "object",
+   "properties": {
+    "methods": {
+     "type": "integer"
+    },
+    "type": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer"
+    },
+    "version": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "count",
+    "methods",
+    "type",
+    "version"
+   ]
+  }
+ },
+ "required": [
+  "data",
+  "meta"
+ ]
+}

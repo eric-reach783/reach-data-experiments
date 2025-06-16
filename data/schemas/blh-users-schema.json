@@ -1,0 +1,222 @@
+{
+ "$schema": "http://json-schema.org/schema#",
+ "type": "object",
+ "properties": {
+  "data": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "AllowedToDelegate": {
+      "type": "array"
+     },
+     "ObjectIdentifier": {
+      "type": "string"
+     },
+     "PrimaryGroupSID": {
+      "type": [
+       "null",
+       "string"
+      ]
+     },
+     "Properties": {
+      "type": "object",
+      "properties": {
+       "domain": {
+        "type": "string"
+       },
+       "domainsid": {
+        "type": "string"
+       },
+       "name": {
+        "type": "string"
+       },
+       "highvalue": {
+        "type": "boolean"
+       },
+       "distinguishedname": {
+        "type": "string"
+       },
+       "unconstraineddelegation": {
+        "type": "boolean"
+       },
+       "trustedtoauth": {
+        "type": "boolean"
+       },
+       "passwordnotreqd": {
+        "type": "boolean"
+       },
+       "enabled": {
+        "type": "boolean"
+       },
+       "lastlogon": {
+        "type": "integer"
+       },
+       "lastlogontimestamp": {
+        "type": "integer"
+       },
+       "pwdlastset": {
+        "type": "integer"
+       },
+       "dontreqpreauth": {
+        "type": "boolean"
+       },
+       "pwdneverexpires": {
+        "type": "boolean"
+       },
+       "sensitive": {
+        "type": "boolean"
+       },
+       "serviceprincipalnames": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "hasspn": {
+        "type": "boolean"
+       },
+       "displayname": {
+        "type": [
+         "null",
+         "string"
+        ]
+       },
+       "email": {
+        "type": "null"
+       },
+       "title": {
+        "type": "null"
+       },
+       "homedirectory": {
+        "type": "null"
+       },
+       "description": {
+        "type": [
+         "null",
+         "string"
+        ]
+       },
+       "userpassword": {
+        "type": "null"
+       },
+       "admincount": {
+        "type": "boolean"
+       },
+       "sidhistory": {
+        "type": "array"
+       },
+       "whencreated": {
+        "type": "integer"
+       },
+       "unixpassword": {
+        "type": "null"
+       },
+       "unicodepassword": {
+        "type": "null"
+       },
+       "logonscript": {
+        "type": "null"
+       },
+       "samaccountname": {
+        "type": "string"
+       },
+       "sfupassword": {
+        "type": "null"
+       },
+       "isaclprotected": {
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "domain",
+       "domainsid",
+       "highvalue",
+       "name"
+      ]
+     },
+     "Aces": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "RightName": {
+         "type": "string"
+        },
+        "IsInherited": {
+         "type": "boolean"
+        },
+        "PrincipalSID": {
+         "type": "string"
+        },
+        "PrincipalType": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "IsInherited",
+        "PrincipalSID",
+        "PrincipalType",
+        "RightName"
+       ]
+      }
+     },
+     "SPNTargets": {
+      "type": "array"
+     },
+     "HasSIDHistory": {
+      "type": "array"
+     },
+     "IsDeleted": {
+      "type": "boolean"
+     },
+     "ContainedBy": {
+      "type": "null"
+     },
+     "IsACLProtected": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "Aces",
+     "AllowedToDelegate",
+     "ContainedBy",
+     "HasSIDHistory",
+     "IsACLProtected",
+     "IsDeleted",
+     "ObjectIdentifier",
+     "PrimaryGroupSID",
+     "Properties",
+     "SPNTargets"
+    ]
+   }
+  },
+  "meta": {
+   "type": "object",
+   "properties": {
+    "methods": {
+     "type": "integer"
+    },
+    "type": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer"
+    },
+    "version": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "count",
+    "methods",
+    "type",
+    "version"
+   ]
+  }
+ },
+ "required": [
+  "data",
+  "meta"
+ ]
+}

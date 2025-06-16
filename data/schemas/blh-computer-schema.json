@@ -1,0 +1,311 @@
+{
+ "$schema": "http://json-schema.org/schema#",
+ "type": "object",
+ "properties": {
+  "data": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "ObjectIdentifier": {
+      "type": "string"
+     },
+     "AllowedToAct": {
+      "type": "array"
+     },
+     "PrimaryGroupSID": {
+      "type": "string"
+     },
+     "ContainedBy": {
+      "type": "null"
+     },
+     "DumpSMSAPassword": {
+      "type": "array"
+     },
+     "Properties": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "domainsid": {
+        "type": "string"
+       },
+       "domain": {
+        "type": "string"
+       },
+       "highvalue": {
+        "type": "boolean"
+       },
+       "distinguishedname": {
+        "type": "string"
+       },
+       "unconstraineddelegation": {
+        "type": "boolean"
+       },
+       "enabled": {
+        "type": "boolean"
+       },
+       "trustedtoauth": {
+        "type": "boolean"
+       },
+       "samaccountname": {
+        "type": "string"
+       },
+       "haslaps": {
+        "type": "boolean"
+       },
+       "lastlogon": {
+        "type": "integer"
+       },
+       "lastlogontimestamp": {
+        "type": "integer"
+       },
+       "pwdlastset": {
+        "type": "integer"
+       },
+       "whencreated": {
+        "type": "integer"
+       },
+       "serviceprincipalnames": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "description": {
+        "type": "null"
+       },
+       "operatingsystem": {
+        "type": "string"
+       },
+       "sidhistory": {
+        "type": "array"
+       },
+       "isaclprotected": {
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "description",
+       "distinguishedname",
+       "domain",
+       "domainsid",
+       "enabled",
+       "haslaps",
+       "highvalue",
+       "isaclprotected",
+       "lastlogon",
+       "lastlogontimestamp",
+       "name",
+       "operatingsystem",
+       "pwdlastset",
+       "samaccountname",
+       "serviceprincipalnames",
+       "sidhistory",
+       "trustedtoauth",
+       "unconstraineddelegation",
+       "whencreated"
+      ]
+     },
+     "LocalGroups": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "ObjectIdentifier": {
+         "type": "string"
+        },
+        "Name": {
+         "type": "string"
+        },
+        "Results": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "ObjectIdentifier": {
+            "type": "string"
+           },
+           "ObjectType": {
+            "type": "string"
+           }
+          },
+          "required": [
+           "ObjectIdentifier",
+           "ObjectType"
+          ]
+         }
+        },
+        "LocalNames": {
+         "type": "array"
+        },
+        "Collected": {
+         "type": "boolean"
+        },
+        "FailureReason": {
+         "type": "null"
+        }
+       },
+       "required": [
+        "Collected",
+        "FailureReason",
+        "LocalNames",
+        "Name",
+        "ObjectIdentifier",
+        "Results"
+       ]
+      }
+     },
+     "UserRights": {
+      "type": "array"
+     },
+     "AllowedToDelegate": {
+      "type": "array"
+     },
+     "Sessions": {
+      "type": "object",
+      "properties": {
+       "Collected": {
+        "type": "boolean"
+       },
+       "FailureReason": {
+        "type": "null"
+       },
+       "Results": {
+        "type": "array"
+       }
+      },
+      "required": [
+       "Collected",
+       "FailureReason",
+       "Results"
+      ]
+     },
+     "PrivilegedSessions": {
+      "type": "object",
+      "properties": {
+       "Collected": {
+        "type": "boolean"
+       },
+       "FailureReason": {
+        "type": "null"
+       },
+       "Results": {
+        "type": "array"
+       }
+      },
+      "required": [
+       "Collected",
+       "FailureReason",
+       "Results"
+      ]
+     },
+     "RegistrySessions": {
+      "type": "object",
+      "properties": {
+       "Collected": {
+        "type": "boolean"
+       },
+       "FailureReason": {
+        "type": "null"
+       },
+       "Results": {
+        "type": "array"
+       }
+      },
+      "required": [
+       "Collected",
+       "FailureReason",
+       "Results"
+      ]
+     },
+     "Aces": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "RightName": {
+         "type": "string"
+        },
+        "IsInherited": {
+         "type": "boolean"
+        },
+        "PrincipalSID": {
+         "type": "string"
+        },
+        "PrincipalType": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "IsInherited",
+        "PrincipalSID",
+        "PrincipalType",
+        "RightName"
+       ]
+      }
+     },
+     "HasSIDHistory": {
+      "type": "array"
+     },
+     "IsDeleted": {
+      "type": "boolean"
+     },
+     "Status": {
+      "type": "null"
+     },
+     "IsACLProtected": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "Aces",
+     "AllowedToAct",
+     "AllowedToDelegate",
+     "ContainedBy",
+     "DumpSMSAPassword",
+     "HasSIDHistory",
+     "IsACLProtected",
+     "IsDeleted",
+     "LocalGroups",
+     "ObjectIdentifier",
+     "PrimaryGroupSID",
+     "PrivilegedSessions",
+     "Properties",
+     "RegistrySessions",
+     "Sessions",
+     "Status",
+     "UserRights"
+    ]
+   }
+  },
+  "meta": {
+   "type": "object",
+   "properties": {
+    "methods": {
+     "type": "integer"
+    },
+    "type": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer"
+    },
+    "version": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "count",
+    "methods",
+    "type",
+    "version"
+   ]
+  }
+ },
+ "required": [
+  "data",
+  "meta"
+ ]
+}

@@ -1,0 +1,154 @@
+{
+  "schema_mappings": {
+    "Computer": {
+      "properties": {
+        "name": "string",
+        "operatingSystem": "string",
+        "lastLogon": "datetime",
+        "unconstrainedDelegation": "boolean",
+        "enabled": "boolean"
+      },
+      "techniques": {
+        "T1018": {
+          "name": "Remote System Discovery",
+          "tactic": "Discovery",
+          "description": "Discovery of domain computers and their properties"
+        },
+        "T1482": {
+          "name": "Domain Trust Discovery",
+          "tactic": "Discovery",
+          "description": "Discovery of domain trust relationships"
+        }
+      }
+    },
+    "User": {
+      "properties": {
+        "name": "string",
+        "isDomainAdmin": "boolean",
+        "lastLogon": "datetime",
+        "hasSPN": "boolean",
+        "enabled": "boolean"
+      },
+      "techniques": {
+        "T1087": {
+          "name": "Account Discovery",
+          "tactic": "Discovery",
+          "description": "Discovery of local or domain accounts"
+        },
+        "T1003": {
+          "name": "OS Credential Dumping",
+          "tactic": "Credential Access",
+          "description": "Dumping credentials from the operating system"
+        }
+      }
+    },
+    "Group": {
+      "properties": {
+        "name": "string",
+        "isDomainAdmin": "boolean",
+        "members": "array",
+        "managedBy": "string"
+      },
+      "techniques": {
+        "T1069": {
+          "name": "Permission Groups Discovery",
+          "tactic": "Discovery",
+          "description": "Discovery of local and domain groups"
+        },
+        "T1098": {
+          "name": "Account Manipulation",
+          "tactic": "Credential Access",
+          "description": "Modification of account properties"
+        }
+      }
+    },
+    "GPO": {
+      "properties": {
+        "name": "string",
+        "guid": "string",
+        "displayname": "string",
+        "description": "string",
+        "createdTime": "datetime",
+        "modifiedTime": "datetime"
+      },
+      "techniques": {
+        "T1615": {
+          "name": "Group Policy Discovery",
+          "tactic": "Discovery",
+          "description": "Discovery of Group Policy Objects"
+        },
+        "T1484": {
+          "name": "Group Policy Modification",
+          "tactic": "Defense Evasion",
+          "description": "Modification of Group Policy Objects"
+        }
+      }
+    },
+    "Session": {
+      "properties": {
+        "userName": "string",
+        "computerName": "string",
+        "loginTime": "datetime",
+        "sessionType": "string"
+      },
+      "techniques": {
+        "T1021": {
+          "name": "Remote Services",
+          "tactic": "Lateral Movement",
+          "description": "Use of remote services for lateral movement"
+        },
+        "T1550": {
+          "name": "Session Hijacking",
+          "tactic": "Lateral Movement",
+          "description": "Hijacking of existing sessions"
+        }
+      }
+    }
+  },
+  "relationship_mappings": {
+    "MemberOf": {
+      "source": "User",
+      "target": "Group",
+      "techniques": {
+        "T1069": {
+          "name": "Permission Groups Discovery",
+          "tactic": "Discovery",
+          "description": "Discovery of group memberships"
+        }
+      }
+    },
+    "HasSession": {
+      "source": "User",
+      "target": "Computer",
+      "techniques": {
+        "T1021": {
+          "name": "Remote Services",
+          "tactic": "Lateral Movement",
+          "description": "Use of remote services for lateral movement"
+        }
+      }
+    },
+    "AdminTo": {
+      "source": "User",
+      "target": "Computer",
+      "techniques": {
+        "T1078": {
+          "name": "Valid Accounts",
+          "tactic": "Defense Evasion",
+          "description": "Use of valid accounts for administration"
+        }
+      }
+    },
+    "GetChangesTo": {
+      "source": "Computer",
+      "target": "GPO",
+      "techniques": {
+        "T1615": {
+          "name": "Group Policy Discovery",
+          "tactic": "Discovery",
+          "description": "Discovery of Group Policy Objects"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+ "$schema": "http://json-schema.org/schema#",
+ "type": "object",
+ "properties": {
+  "data": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "ObjectIdentifier": {
+      "type": "string"
+     },
+     "Properties": {
+      "type": "object",
+      "properties": {
+       "domain": {
+        "type": "string"
+       },
+       "domainsid": {
+        "type": "string"
+       },
+       "highvalue": {
+        "type": "boolean"
+       },
+       "name": {
+        "type": "string"
+       },
+       "distinguishedname": {
+        "type": "string"
+       },
+       "admincount": {
+        "type": "boolean"
+       },
+       "description": {
+        "type": "string"
+       },
+       "samaccountname": {
+        "type": "string"
+       },
+       "whencreated": {
+        "type": "integer"
+       },
+       "isaclprotected": {
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "domain",
+       "name"
+      ]
+     },
+     "ContainedBy": {
+      "type": "null"
+     },
+     "Members": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "ObjectIdentifier": {
+         "type": "string"
+        },
+        "ObjectType": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "ObjectIdentifier",
+        "ObjectType"
+       ]
+      }
+     },
+     "Aces": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "RightName": {
+         "type": "string"
+        },
+        "IsInherited": {
+         "type": "boolean"
+        },
+        "PrincipalSID": {
+         "type": "string"
+        },
+        "PrincipalType": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "IsInherited",
+        "PrincipalSID",
+        "PrincipalType",
+        "RightName"
+       ]
+      }
+     },
+     "IsDeleted": {
+      "type": "boolean"
+     },
+     "IsACLProtected": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "Aces",
+     "ContainedBy",
+     "IsACLProtected",
+     "IsDeleted",
+     "Members",
+     "ObjectIdentifier",
+     "Properties"
+    ]
+   }
+  },
+  "meta": {
+   "type": "object",
+   "properties": {
+    "methods": {
+     "type": "integer"
+    },
+    "type": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer"
+    },
+    "version": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "count",
+    "methods",
+    "type",
+    "version"
+   ]
+  }
+ },
+ "required": [
+  "data",
+  "meta"
+ ]
+}
