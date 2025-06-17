@@ -1,0 +1,33 @@
+comments,Field Type,Okta,Active Directory,TAPs,BloodHOud,XDR,Axonius,MS Defender,MS Office 365,Fortinet,PANW
+"U: data obtained from a category specific to users
+Ex: AD user device data maps to BH names
+U: means User data sources (BH Users data, AD users data), also covers People(P) sources
+C: means computer data sources
+D: means devices",hostname,NULL,U:users.devices.displayName|U:users.devices.hostnames|U:serviceprincipalnames|D:displayName|D:hostnames,,U:data[*].properties.name|U:data[*].properties.email|C:data[*].properties.serviceprincipalnames,endpoints.DATA[0].HOST_NAME,specific_data.data.name OR 'Aggregated: Asset Name',,NULL,NULL,NULL
+,email,target.alternateId|actor.alternateId,U:mail|U:otherMails|U:proxyAddresses|U:actor.mail|U:onPremisesDistinguishedName|U:userPrincipalName,U:name|U:user|U:hashedEmail,U:actor.alternateId,,,"devices.""email address""",EmailDirection=='Inbound'.Recipients,NULL,NULL
+,MAC Address,NULL,NULL,,,NULL,NULL,NULL,NULL,NULL,NULL
+,user sid,NULL,NULL,,ownersid,USER_SID (security Identifiers),NULL,NULL,NULL,NULL,NULL
+,object sid,NULL,U:objectid,,|C:data[*].properties,COMPUTER_SID (?),NULL,NULL,NULL,NULL,NULL
+,ipv4,U:client.ipAddress,U:imAddresses,,,NULL,NULL,NULL,NULL,NULL,NULL
+,fqdn,NULL,NULL,,,NULL,NULL,NULL,NULL,NULL,NULL
+,certificate,U:authenticationContext?,U:proxyAddresses|U:onPremisesDistinguishedName,,,NULL,NULL,NULL,NULL,NULL,NULL
+,tags,NULL,"",,,NULL,NULL,NULL,NULL,NULL,NULL
+"",service registration status,D:profile.registered|U:device.registered|U:device.managed,U:users.devices[*].profileType,NULL,,,,,,,
+"",device id,device.id,U:users.device[*].deviceId|D:deviceId|D:model|D:manufacturer,,,,,,,,
+"",apId,,U:users.device[*].mdmAppId|D:mdmAppId,,,,,,,,
+"",(Detailed)-device info,U:device.*,U:users.device[*]|D:operatingSystem|D:operatingSystemVersion,NULL,,,,,,,
+"",org position,,U:users.employeeType|U-D:users.jobTitle,U:vip|U:title,U:data[*].properties.title,,,,,,
+"These are relationships to other assets within its own data sources.
+May be helpful to replicate BH paths",indirect associations,,U:users.transitiveMemberOf,,,,,,,,
+,domain,U:securityContext.domain?|U:client.zone?,U:onPremisesDomainName,,U:data[*].properties.domain|U:data[*].properties.domainsid|C:data[*].properties.DomainSID,,,,,,
+,distinguished name,,U:distinguishedName|U:onPremisesDistinguishedName,,U:data[*].properties.distinguishedname,,,,,,
+"",groups,,,,,,,,,,
+"ACEs for enumerating ACEs across all AD objects to map out ACL-based attack paths.
+Access Control Entries - individual permissions records that define what each security principal can/can't do to AD objects.",aces,,,,U:data[*].properties.Aces,,,,,,
+,sAMAccountName,,sAMAccountName|U:onPremisesSamAccountName,,C:data[*].properties.samaccountname|U:data[*].properties.samaccountname,,,,,,
+,memberOf,,U:memberof|U:transitiveMemberOf,,memberof,,,,,,
+,User name,U:actor.name|U:actor.displayName|U:actor.alternateId,U:givenName(first)|U:surename(last)|U:preferredName,U:name,,,,,,,
+the reason the record was made,event,U:eventType,U:signInActivity|U:signInSessionsValidFromDateTime|U:activities|D:approximateLastSignInDateTime,,,,,,,,
+,device list,,U:devices,,,,,,,,
+,manager id,,U:manager,,,,,,,,
+,device users,,D:registeredUsers@delta,,,,,,,,
