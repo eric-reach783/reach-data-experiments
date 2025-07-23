@@ -1,0 +1,45 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+  - repo: https://github.com/kynan/nbstripout
+    rev: v0.8.1
+    hooks:
+      - id: nbstripout
+  - repo: local
+    hooks:
+      - id: detect-secrets-grep
+        name: detect PII/secrets
+        entry: ./.git/hooks/pre-commit
+        language: script
+        files: |
+          \.(py|ipynb|yml|json)$
+
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.1.1
+    hooks:
+      - id: black-jupyter
+        types_or: [ python, jupyter ]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.1
+    hooks:
+      - id: ruff
+        args: [ --fix, --select=I,F401 ]
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.7.1
+    hooks:
+      - id: nbqa-isort
+      - id: nbqa-pyupgrade
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.1
+    hooks:
+      - id: mypy
+        args: [ --strict, --ignore-missing-imports ]
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.22.1
+    hooks:
+      - id: gitleaks
