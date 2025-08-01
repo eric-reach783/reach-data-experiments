@@ -15,7 +15,7 @@ relevant APIs for access control are the System Log API, Users API, Devices API,
 
 #### Actor Identification Fields
 
-The **actor.displayName** field you specifically mentioned is part of the System Log API event schema:
+The **actor.displayName** is part of the System Log API event schema:
 
 - **Field Path**: `actor.displayName`
 - **Data Type**: String
@@ -25,7 +25,7 @@ The **actor.displayName** field you specifically mentioned is part of the System
 
 #### Authentication Context Schema
 
-Okta's authentication context provides comprehensive session tracking:
+Okta's authentication context provides session tracking. These fields enable session-based access control and comprehensive authentication auditing:
 
 - **authenticationContext.externalSessionId**: Links events within the same user session
 - **authenticationContext.rootSessionId**: Tracks all events related to a user's authentication, including system
@@ -33,7 +33,6 @@ Okta's authentication context provides comprehensive session tracking:
 - **authenticationContext.authenticationProvider**: Identifies the authentication method used
 - **authenticationContext.credentialType**: Specifies the type of credential (password, biometric, etc.)
 
-These fields enable session-based access control and comprehensive authentication auditing.
 
 #### Device-Related Identifiers
 
