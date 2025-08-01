@@ -1,7 +1,7 @@
 # Schema Documentation for Access Control in Okta and CrowdStrike
 
 Both Okta and CrowdStrike provide extensive schema documentation for their access control mechanisms through their
-respective API documentation portals. This report details the specific fields, data types, and documentation locations
+respective API documentation portals. This document details the specific fields, data types, and documentation locations
 for access control functionality in both platforms.
 
 ## Okta Access Control Schema Documentation
