@@ -53,8 +53,6 @@ These fields enable device-based access policies and conditional access based on
 - **Devices API**: `https://{yourOktaDomain}/api/v1/devices`
 - **Authentication API**: `https://{yourOktaDomain}/api/v1/authn`
 
-The complete schema documentation with field descriptions, data types, and examples is available through the Okta API
-reference portal.
 
 ## CrowdStrike Access Control Schema Documentation
 
@@ -71,7 +69,7 @@ CrowdStrike provides region-specific API documentation through multiple endpoint
 
 #### Device Identification Schema
 
-The **device_id** field you mentioned is the primary device identifier:
+The **device_id** field is the primary device identifier:
 
 - **Field Name**: `device_id`
 - **Data Type**: 32-character hexadecimal string
@@ -160,5 +158,3 @@ For the most current and complete schema documentation:
 2. **CrowdStrike**: Use the region-specific Swagger documentation URLs with valid API credentials
 3. Both platforms provide Postman collections and SDK support for easier integration
 
-The schema documentation includes complete field descriptions, validation rules, example values, and implementation
-guidance for all access control mechanisms.
